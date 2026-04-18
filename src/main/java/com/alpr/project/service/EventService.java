@@ -9,6 +9,7 @@ import com.alpr.project.dto.EventResponse;
 import com.alpr.project.dto.EventUpdateRequest;
 import com.alpr.project.entity.Event;
 import com.alpr.project.entity.User;
+import com.alpr.project.exception.BadRequestException;
 import com.alpr.project.exception.ResourceNotFoundException;
 import com.alpr.project.repository.EventRepository;
 import com.alpr.project.repository.UserRepository;
@@ -24,7 +25,9 @@ public class EventService {
 
     public EventResponse CreateEvent(EventCreateRequest request, String userEmail){
         User user = userRepository.findByEmail(userEmail).orElseThrow(() -> new RuntimeException("Kullanıcı Bulunamadı"));
-        
+        if(request.getEndTime().isBefore(request.getStartTime())){
+            throw new BadRequestException("Bitiş saati başlangıç saatinden önce olamaz");
+        }
         Event event = Event.builder()
             .title(request.getTitle())
             .destruction(request.getDescription())
@@ -70,7 +73,9 @@ public class EventService {
     public EventResponse updateMyEvent(Long eventId, EventUpdateRequest request, String userEmail){
         User user = userRepository.findByEmail(userEmail)
         .orElseThrow(() -> new ResourceNotFoundException("Kullanıcı Bulunamadı"));
-
+        if(request.getEndTime().isBefore(request.getStartTime())){
+            throw new BadRequestException("Bitiş saati başlangıç saatinden önce olamaz");
+        }
         Event event = eventRepository.findByIdAndUserId(eventId, user.getId())
         .orElseThrow(() -> new ResourceNotFoundException("Etkinlik Bulunamadı"));
 

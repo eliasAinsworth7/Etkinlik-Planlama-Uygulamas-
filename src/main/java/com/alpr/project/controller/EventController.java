@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import jakarta.validation.Valid;
 
 
 @RestController
@@ -33,7 +33,7 @@ public class EventController {
     private final EventService eventService;
 
     @PostMapping
-    public EventResponse createEvent(@RequestBody EventCreateRequest request, Authentication authentication) {
+    public EventResponse createEvent(@Valid @RequestBody EventCreateRequest request, Authentication authentication) {
         String userEmail = authentication.getName();
         return eventService.CreateEvent(request, userEmail);
     }
@@ -51,7 +51,7 @@ public class EventController {
     }
 
     @PostMapping("/{id}")
-    public EventResponse updateMyEvent(@PathVariable Long id, @RequestBody EventUpdateRequest request, Authentication authentication) {
+    public EventResponse updateMyEvent(@Valid @PathVariable Long id, @RequestBody EventUpdateRequest request, Authentication authentication) {
         String userEmail = authentication.getName();
         return eventService.updateMyEvent(id, request, userEmail);
     }

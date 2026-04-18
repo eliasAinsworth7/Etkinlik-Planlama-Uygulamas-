@@ -10,7 +10,7 @@ import com.alpr.project.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -21,12 +21,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public String postMethodName(@RequestBody RegisterRequest request) {
+    public String postMethodName(@Valid @RequestBody RegisterRequest request) {
         return authService.register(request);
     }
     
     @PostMapping("/login")
-    public AuthResponse postMethodName(@RequestBody LoginRequest request) {
+    public AuthResponse postMethodName(@Valid @RequestBody LoginRequest request) {
         return authService.login(request);
     }
     
