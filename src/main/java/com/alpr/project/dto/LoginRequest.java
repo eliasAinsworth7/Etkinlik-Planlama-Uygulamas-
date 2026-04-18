@@ -2,17 +2,12 @@ package com.alpr.project.dto;
 
 import lombok.Data;
 import jakarta.validation.constraints.*;
-
 @Data
-public class RegisterRequest {
-    @NotBlank(message = "Ad Soyad boş olamaz")
-    private String fullName;
-
+public class LoginRequest {
     @NotBlank(message = "Email boş olamaz")
     @Email(message = "Geçerli email giriniz")
     private String email;
 
     @NotBlank(message = "Şifre boş olamaz")
-    @Size(min = 6,message = "Şifre en az 6 karakter olmalıdır")
     private String password;
 }

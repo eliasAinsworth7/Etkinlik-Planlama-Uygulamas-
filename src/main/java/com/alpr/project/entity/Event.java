@@ -2,12 +2,13 @@ package com.alpr.project.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
-import org.apache.tomcat.util.http.parser.Priority;
 import org.hibernate.annotations.ManyToAny;
 
 import com.alpr.project.enums.EventCategory;
 import com.alpr.project.enums.EventStatus;
+import com.alpr.project.enums.Priority;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,12 +19,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -31,6 +34,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Event {
     
@@ -48,9 +52,10 @@ public class Event {
     private LocalDate eventDate;
 
     @Column(nullable = false)
-    private LocalDate startDate;
+    private LocalTime startTime;
 
-    private LocalDate endTime;
+    @Column(nullable = false)
+    private LocalTime endTime;
 
     private String location;
 
@@ -63,7 +68,7 @@ public class Event {
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
-    @ManyToAny(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable =false)
     private User user;
 
