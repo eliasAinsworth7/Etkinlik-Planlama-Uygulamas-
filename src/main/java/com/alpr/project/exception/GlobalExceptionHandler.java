@@ -13,73 +13,40 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alpr.project.dto.ApiResponse;
+
 @RestController
 public class GlobalExceptionHandler {
     
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException exception){
-        ErrorResponse response = ErrorResponse.builder()
-        .status(HttpStatus.NOT_FOUND.value())
-        .message(exception.getMessage())
-        .timestamp(LocalDateTime.now())
-        .errors(null)
-        .build();
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+    public ResponseEntity<ApiResponse<Object>> handleResourceNotFound(ResourceNotFoundException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>(false, null, exception.getMessage()));
     }
 
     @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<ErrorResponse> handleBadRequest(BadRequestException exception){
-        ErrorResponse response = ErrorResponse.builder()
-        .status(HttpStatus.BAD_REQUEST.value())
-        .message(exception.getMessage())
-        .timestamp(LocalDateTime.now())
-        .errors(null)
-        .build();
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    public ResponseEntity<ApiResponse<Object>> handleBadRequest(BadRequestException exception){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(false, null, exception.getMessage()));
     }
 
     @ExceptionHandler(UnauthorizedActionException.class)
-    public ResponseEntity<ErrorResponse> handleUnauthorizedAction(UnauthorizedActionException exception){
-        ErrorResponse response = ErrorResponse.builder()
-        .status(HttpStatus.UNAUTHORIZED.value())
-        .message(exception.getMessage())
-        .timestamp(LocalDateTime.now())
-        .errors(null)
-        .build();
-
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+    public ResponseEntity<ApiResponse<Object>> handleUnauthorizedAction(UnauthorizedActionException exception){
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new ApiResponse<>(false, null, exception.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> handleValidationError(MethodArgumentNotValidException expception){
+    public ResponseEntity<ApiResponse<Map<String,String>>> handleValidationError(MethodArgumentNotValidException expception){
         Map<String,String> validationErrors = new HashMap<>();
 
         expception.getBindingResult().getFieldErrors().forEach(error ->
             validationErrors.put(error.getField(),error.getDefaultMessage())
         );
 
-        ErrorResponse response = ErrorResponse.builder()
-        .status(HttpStatus.BAD_REQUEST.value())
-        .message("Validation Hatası")
-        .timestamp(LocalDateTime.now())
-        .errors(validationErrors)
-        .build();
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse<>(false, validationErrors, "Validation hatası"));
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleGeneralException(Exception exception){
-        ErrorResponse response = ErrorResponse.builder()
-        .status(HttpStatus.INTERNAL_SERVER_ERROR.value())
-        .message("Beklenmeyen Bir Hata Oluştu")
-        .timestamp(LocalDateTime.now())
-        .errors(null)
-        .build();
-
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+    public ResponseEntity<ApiResponse<Object>> handleGeneralException(Exception exception){
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>(false, null, "Beklenmeyen bir hata oluştu"));
     }
 
 }

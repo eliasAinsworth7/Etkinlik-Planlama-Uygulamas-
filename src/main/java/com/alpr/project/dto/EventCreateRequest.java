@@ -22,7 +22,7 @@ public class EventCreateRequest {
     @NotNull(message = "Başlangıç saati boş olamaz")
     private LocalTime startTime;
 
-    @NotBlank(message = "Bitiş saati boş olamaz")
+    @NotNull(message = "Bitiş saati boş olamaz")
     private LocalTime endTime;
 
 

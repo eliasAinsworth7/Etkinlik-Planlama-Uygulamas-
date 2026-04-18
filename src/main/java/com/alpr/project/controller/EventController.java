@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.service.annotation.DeleteExchange;
 
+import com.alpr.project.dto.ApiResponse;
 import com.alpr.project.dto.EventCreateRequest;
 import com.alpr.project.dto.EventResponse;
 import com.alpr.project.dto.EventUpdateRequest;
@@ -33,39 +34,45 @@ public class EventController {
     private final EventService eventService;
 
     @PostMapping
-    public EventResponse createEvent(@Valid @RequestBody EventCreateRequest request, Authentication authentication) {
+    public ApiResponse<EventResponse> createEvent(@Valid @RequestBody EventCreateRequest request, Authentication authentication) {
         String userEmail = authentication.getName();
-        return eventService.CreateEvent(request, userEmail);
+        EventResponse event = eventService.CreateEvent(request, userEmail);
+        return new ApiResponse<EventResponse>(true, event, "Etkinlik oluşturuldu");
     }
 
     @GetMapping
-    public List<EventResponse> getMyEvents(Authentication authentication) {
+    public ApiResponse<List<EventResponse>> getMyEvents(Authentication authentication) {
         String userEmail = authentication.getName();
-        return eventService.getMyEvents(userEmail);
+        List<EventResponse> events = eventService.getMyEvents(userEmail);
+        return new ApiResponse<List<EventResponse>>(true, events, "Etkinlikler listelendi");
     }
 
     @GetMapping("/{id}")
-    public EventResponse getMyEventById(@PathVariable Long id, Authentication authentication) {
+    public ApiResponse<EventResponse> getMyEventById(@PathVariable Long id, Authentication authentication) {
         String userEmail = authentication.getName();
-        return eventService.getMyEventById(id, userEmail);
+        EventResponse event = eventService.getMyEventById(id, userEmail);
+        return new ApiResponse<EventResponse>(true, event, "Etkinlik bulundu");
     }
 
     @PostMapping("/{id}")
-    public EventResponse updateMyEvent(@Valid @PathVariable Long id, @RequestBody EventUpdateRequest request, Authentication authentication) {
+    public ApiResponse<EventResponse> updateMyEvent(@Valid @PathVariable Long id, @RequestBody EventUpdateRequest request, Authentication authentication) {
         String userEmail = authentication.getName();
-        return eventService.updateMyEvent(id, request, userEmail);
+        EventResponse event = eventService.updateMyEvent(id, request, userEmail);
+        return new ApiResponse<EventResponse>(true, event, "Etklinlik güncellendi");
     }
 
     @DeleteMapping("/{id}")
-    public String deleteMyEvent(@PathVariable Long id, Authentication authentication){
+    public ApiResponse<String> deleteMyEvent(@PathVariable Long id, Authentication authentication){
         String userEmail = authentication.getName();
-        return eventService.deleteMyEvent(id, userEmail);
+        String result = eventService.deleteMyEvent(id, userEmail);
+        return new ApiResponse<String>(true, result, "Etkinlik silindi");
     }
     
     @GetMapping("/admin/all")
     @PreAuthorize("hasRole('ADMIN')")
-    public List<EventResponse> getAllEvents() {
-        return eventService.getAllEvents();
+    public ApiResponse<List<EventResponse>> getAllEvents() {
+        List<EventResponse> events = eventService.getAllEvents();
+        return new ApiResponse<List<EventResponse>>(true, events, "Admin için bütün etkinlikler listelendi");
     }
     
     

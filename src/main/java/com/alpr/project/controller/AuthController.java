@@ -3,6 +3,7 @@ package com.alpr.project.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alpr.project.dto.ApiResponse;
 import com.alpr.project.dto.AuthResponse;
 import com.alpr.project.dto.LoginRequest;
 import com.alpr.project.dto.RegisterRequest;
@@ -21,13 +22,15 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public String postMethodName(@Valid @RequestBody RegisterRequest request) {
-        return authService.register(request);
+    public ApiResponse<String> postMethodName(@Valid @RequestBody RegisterRequest request) {
+        String result = authService.register(request);
+        return new ApiResponse<String>(true, result, "Kullanıcı Oluşturuldu");
     }
     
     @PostMapping("/login")
-    public AuthResponse postMethodName(@Valid @RequestBody LoginRequest request) {
-        return authService.login(request);
+    public ApiResponse<AuthResponse> postMethodName(@Valid @RequestBody LoginRequest request) {
+        AuthResponse response = authService.login(request);
+        return new ApiResponse<AuthResponse>(true, response, "Giriş başarılı");
     }
     
 }
