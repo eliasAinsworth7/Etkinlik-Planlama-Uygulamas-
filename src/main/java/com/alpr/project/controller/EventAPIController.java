@@ -28,7 +28,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/api/events")
 @PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
-public class EventController {
+public class EventAPIController {
     
     private final EventService eventService;
 

@@ -7,7 +7,12 @@
 <body>
     <h2>Etkinlik Listesi</h2>
 
-    <div id="events"></div>
+    <div th:each="event : ${events}">
+        <p th:text="${event.title}"></p>
+        <p th:text="${event.description}"></p>
+    </div>
+
+    <a th:href="@{/event/add}">Etkinlik Ekle</a>
 </body>
 
 </html>

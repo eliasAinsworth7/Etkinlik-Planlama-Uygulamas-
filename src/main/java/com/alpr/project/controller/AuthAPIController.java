@@ -1,8 +1,5 @@
 package com.alpr.project.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.alpr.project.dto.ApiResponse;
 import com.alpr.project.dto.AuthResponse;
 import com.alpr.project.dto.LoginRequest;
@@ -10,13 +7,16 @@ import com.alpr.project.dto.RegisterRequest;
 import com.alpr.project.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/auth")
+@PreAuthorize("hasRole('ADMIN')")
 @RequiredArgsConstructor
-public class AuthController {
+public class AuthAPIController {
     
 
     private final AuthService authService;
