@@ -12,9 +12,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -28,16 +26,6 @@ public class AuthPageController {
     public String loginPatch(Model model) {
         model.addAttribute("loginRequest",new LoginRequest());
         return "login";
-    }
-
-    @PostMapping("/login")
-    public String postMethodName(@Valid @ModelAttribute("loginRequest") LoginRequest request, BindingResult result,Model model) {
-        if(result.hasErrors()){
-            model.addAttribute("loginRequest", request);
-            return "login";
-        }
-        
-        return "events";
     }
     
 

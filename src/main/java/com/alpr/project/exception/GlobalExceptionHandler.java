@@ -1,13 +1,9 @@
 package com.alpr.project.exception;
 
-import java.net.http.HttpRequest;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

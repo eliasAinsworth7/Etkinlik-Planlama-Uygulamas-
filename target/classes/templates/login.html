@@ -8,11 +8,11 @@
 
 <h2>Giriş Yap</h2>
 
-<form method="post" action="/login">
+<form th:action="@{/login}" method="post">
     
     <div>
         <label>Email:</label>
-        <input type="email" name="username" required>
+        <input type="text" name="email" required>
     </div>
 
     <div>
@@ -21,6 +21,7 @@
     </div>
 
     <button type="submit">Giriş Yap</button>
+    <p th:if="${param.error}">E-mail ya da şifre yanlış</p>
 </form>
 
 <p>
