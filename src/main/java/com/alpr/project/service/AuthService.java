@@ -1,6 +1,7 @@
 package com.alpr.project.service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.alpr.project.dto.AuthResponse;
@@ -22,6 +23,7 @@ public class AuthService {
     private final BCryptPasswordEncoder passwordEncoder;
     private final JwtService juJwtService;
 
+    @Transactional
     public String register(RegisterRequest request){
         if(userRepository.existsByEmail(request.getEmail())){
             throw new BadRequestException("Email zaten kullanılıyor");
@@ -38,6 +40,7 @@ public class AuthService {
         return "Kullanıcı oluşturuldu";
     }
 
+    @Transactional(readOnly = true)
     public AuthResponse login(@RequestBody LoginRequest request){
         User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new ResourceNotFoundException("Kullanıcı Bulunamadı"));
 

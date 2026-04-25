@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Include Spring's default console appender and patterns -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="LOG_FILE" value="${BUILD_FOLDER:-build}/${springAppName}"/>
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+    <!-- Custom Logger for a specific package -->
+    <logger name="com.example" level="DEBUG" />
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+    <!-- Profile-specific configuration -->
+    <springProfile name="dev">
+        <logger name="com.example" level="TRACE" />
+    </springProfile>
+</configuration>

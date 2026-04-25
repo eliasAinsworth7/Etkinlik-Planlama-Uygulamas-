@@ -1,0 +1,105 @@
+2026-04-25T09:42:52.259+03:00  INFO 23080 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Starting ProjectApplication using Java 21.0.10 with PID 23080 (C:\Users\bavut\Desktop\SpringbootEventProject\project\target\classes started by bavut in C:\Users\bavut\Desktop\SpringbootEventProject\project)
+2026-04-25T09:42:52.263+03:00  INFO 23080 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-04-25T09:42:53.484+03:00  INFO 23080 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-25T09:42:53.570+03:00  INFO 23080 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
+2026-04-25T09:42:54.891+03:00  INFO 23080 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-04-25T09:42:54.924+03:00  INFO 23080 --- [eventProgress] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-25T09:42:54.927+03:00  INFO 23080 --- [eventProgress] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-25T09:42:55.063+03:00  INFO 23080 --- [eventProgress] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2719 ms
+2026-04-25T09:42:55.452+03:00  INFO 23080 --- [eventProgress] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-25T09:42:55.564+03:00  INFO 23080 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-25T09:42:56.518+03:00  INFO 23080 --- [eventProgress] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-25T09:42:56.568+03:00  INFO 23080 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-25T09:42:56.830+03:00  INFO 23080 --- [eventProgress] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b732dd
+2026-04-25T09:42:56.834+03:00  INFO 23080 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-25T09:42:56.961+03:00  INFO 23080 --- [eventProgress] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/planner_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: planner_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-25T09:42:58.531+03:00  INFO 23080 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-25T09:42:58.653+03:00  INFO 23080 --- [eventProgress] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-25T09:42:58.755+03:00  INFO 23080 --- [eventProgress] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-25T09:42:59.321+03:00  WARN 23080 --- [eventProgress] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-25T09:42:59.488+03:00  INFO 23080 --- [eventProgress] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-25T09:42:59.830+03:00  INFO 23080 --- [eventProgress] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-04-25T09:43:00.575+03:00  INFO 23080 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-04-25T09:43:00.580+03:00  INFO 23080 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Started ProjectApplication in 9.295 seconds (process running for 10.492)
+2026-04-25T09:44:25.573+03:00  INFO 41704 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Starting ProjectApplication using Java 21.0.10 with PID 41704 (C:\Users\bavut\Desktop\SpringbootEventProject\project\target\classes started by bavut in C:\Users\bavut\Desktop\SpringbootEventProject\project)
+2026-04-25T09:44:25.580+03:00  INFO 41704 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-04-25T09:44:26.680+03:00  INFO 41704 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-25T09:44:26.775+03:00  INFO 41704 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2026-04-25T09:44:27.912+03:00  INFO 41704 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-04-25T09:44:27.960+03:00  INFO 41704 --- [eventProgress] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-25T09:44:27.962+03:00  INFO 41704 --- [eventProgress] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-25T09:44:28.097+03:00  INFO 41704 --- [eventProgress] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2448 ms
+2026-04-25T09:44:28.499+03:00  INFO 41704 --- [eventProgress] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-25T09:44:28.682+03:00  INFO 41704 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-25T09:44:29.675+03:00  INFO 41704 --- [eventProgress] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-25T09:44:29.711+03:00  INFO 41704 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-25T09:44:30.033+03:00  INFO 41704 --- [eventProgress] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@400008bf
+2026-04-25T09:44:30.037+03:00  INFO 41704 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-25T09:44:30.108+03:00  INFO 41704 --- [eventProgress] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/planner_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: planner_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-25T09:44:31.433+03:00  INFO 41704 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-25T09:44:31.531+03:00  INFO 41704 --- [eventProgress] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-25T09:44:31.612+03:00  INFO 41704 --- [eventProgress] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-25T09:44:32.101+03:00  WARN 41704 --- [eventProgress] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-25T09:44:32.277+03:00  INFO 41704 --- [eventProgress] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-25T09:44:32.591+03:00  INFO 41704 --- [eventProgress] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-04-25T09:44:33.410+03:00  INFO 41704 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-04-25T09:44:33.419+03:00  INFO 41704 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Started ProjectApplication in 8.562 seconds (process running for 9.506)
+2026-04-25T11:40:40.810+03:00  INFO 41156 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Starting ProjectApplication using Java 21.0.10 with PID 41156 (C:\Users\bavut\Desktop\SpringbootEventProject\project\target\classes started by bavut in C:\Users\bavut\Desktop\SpringbootEventProject\project)
+2026-04-25T11:40:40.813+03:00  INFO 41156 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-04-25T11:40:41.786+03:00  INFO 41156 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-25T11:40:41.855+03:00  INFO 41156 --- [eventProgress] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2026-04-25T11:40:42.822+03:00  INFO 41156 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-04-25T11:40:42.867+03:00  INFO 41156 --- [eventProgress] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-25T11:40:42.867+03:00  INFO 41156 --- [eventProgress] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-25T11:40:43.039+03:00  INFO 41156 --- [eventProgress] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2169 ms
+2026-04-25T11:40:43.384+03:00  INFO 41156 --- [eventProgress] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-04-25T11:40:43.550+03:00  INFO 41156 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-04-25T11:40:44.330+03:00  INFO 41156 --- [eventProgress] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-25T11:40:44.364+03:00  INFO 41156 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-25T11:40:44.587+03:00  INFO 41156 --- [eventProgress] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@369fb99a
+2026-04-25T11:40:44.589+03:00  INFO 41156 --- [eventProgress] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-25T11:40:44.695+03:00  INFO 41156 --- [eventProgress] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/planner_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.3
+	Default catalog/schema: planner_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-25T11:40:45.885+03:00  INFO 41156 --- [eventProgress] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-25T11:40:45.988+03:00  INFO 41156 --- [eventProgress] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-25T11:40:46.051+03:00  INFO 41156 --- [eventProgress] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-25T11:40:46.505+03:00  WARN 41156 --- [eventProgress] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-25T11:40:46.663+03:00  INFO 41156 --- [eventProgress] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-25T11:40:46.906+03:00  INFO 41156 --- [eventProgress] [main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-04-25T11:40:47.423+03:00  INFO 41156 --- [eventProgress] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-04-25T11:40:47.432+03:00  INFO 41156 --- [eventProgress] [main] com.alpr.project.ProjectApplication      : Started ProjectApplication in 7.238 seconds (process running for 7.968)
+2026-04-25T11:40:59.955+03:00  INFO 41156 --- [eventProgress] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-25T11:40:59.955+03:00  INFO 41156 --- [eventProgress] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-25T11:40:59.957+03:00  INFO 41156 --- [eventProgress] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
