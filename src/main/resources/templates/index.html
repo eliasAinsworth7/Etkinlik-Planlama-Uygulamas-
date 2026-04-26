@@ -2,12 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Etkinlik Planlayıcı</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <meta charset="UTF-8">
 </head>
 
-<body>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/}">Etkinlik Planlayıcı</a>
+        </div>
+    </nav>
 
-    <h1>Etkinlik Planlayıcı'ya hoş geldiniz</h1><br/>
-    <a href="/login">login</a><br/>
-    <a href="/events-page">Etkinlikler</a><br/>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body text-center p-5">
+                        <h1 class="mb-3">📅 Etkinlik Planlayıcı</h1>
+                        <p class="text-muted mb-4">Etkinliklerinizi kolayca oluşturun, düzenleyin ve takip edin.</p>
+
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a th:href="@{/login}" class="btn btn-primary btn-lg">
+                                Giriş Yap
+                            </a>
+
+                            <a th:href="@{/register}" class="btn btn-primary btn-lg"> Kayit Ol</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 </html>
