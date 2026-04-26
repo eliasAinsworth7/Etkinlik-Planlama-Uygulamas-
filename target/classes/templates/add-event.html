@@ -87,6 +87,7 @@
                     <button type="submit" class="btn btn-success">Ekle</button>
                     <a th:href="@{/events}" class="btn btn-secondary">İptal</a>
                 </form>
+                <div class="alert alert-danger" th:if="${errorMessage}" th:text="${errorMessage}"></div>
             </div>
         </div>
     </div>

@@ -31,7 +31,7 @@
                         <tr th:each="event : ${events}" >
                             <td th:text="${event.title}"></td>
                             <td th:text="${event.description}"></td>
-                            <td th:text="${event.eventData}"></td>
+                            <td th:text="${event.eventDate}"></td>
                             <td>
                                 <a th:href="@{/events/edit/{id}(id = ${event.id})}" class="btn btn-sm btn-warning">Düzenle</a>
                                 <form th:action="@{/events/delete/{id}(id = ${event.id})}" method="post" style="display: inline;">

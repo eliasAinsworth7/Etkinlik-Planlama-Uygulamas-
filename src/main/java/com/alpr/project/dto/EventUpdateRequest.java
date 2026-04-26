@@ -13,17 +13,18 @@ import lombok.Data;
 public class EventUpdateRequest {
     @NotBlank(message = "Başlık boş olamaz")
     private String title;
-
+    
     private String description;
 
     @NotNull(message = "Etkinlik tarihi boş olamaz")
     private LocalDate eventDate;
 
-    @NotNull(message = "Başlama tarihi boş olamaz")
+    @NotNull(message = "Başlangıç saati boş olamaz")
     private LocalTime startTime;
 
-    @NotNull(message = "Bitiş tarihi boş olamaz")
+    @NotNull(message = "Bitiş saati boş olamaz")
     private LocalTime endTime;
+
 
     private String location;
 
