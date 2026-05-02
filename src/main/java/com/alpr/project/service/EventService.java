@@ -9,6 +9,7 @@ import com.alpr.project.dto.EventResponse;
 import com.alpr.project.dto.EventUpdateRequest;
 import com.alpr.project.entity.Event;
 import com.alpr.project.entity.User;
+import com.alpr.project.enums.EventCategory;
 import com.alpr.project.exception.BadRequestException;
 import com.alpr.project.exception.ResourceNotFoundException;
 import com.alpr.project.repository.EventRepository;

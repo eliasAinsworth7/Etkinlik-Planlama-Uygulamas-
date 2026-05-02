@@ -3,6 +3,8 @@ package com.alpr.project.dto;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.alpr.project.enums.EventCategory;
 import com.alpr.project.enums.EventStatus;
 import com.alpr.project.enums.Priority;
@@ -17,12 +19,15 @@ public class EventCreateRequest {
     private String description;
 
     @NotNull(message = "Etkinlik tarihi boş olamaz")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate eventDate;
 
     @NotNull(message = "Başlangıç saati boş olamaz")
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime startTime;
 
     @NotNull(message = "Bitiş saati boş olamaz")
+    @DateTimeFormat(pattern ="HH:mm")
     private LocalTime endTime;
 
 

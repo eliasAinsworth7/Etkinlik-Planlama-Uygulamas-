@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 
@@ -36,10 +37,12 @@ public class AuthPageController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid @ModelAttribute("registerRequest")RegisterRequest request, BindingResult result) {
+    public String registerUser(@Valid @ModelAttribute("registerRequest")RegisterRequest request, RedirectAttributes redirectAttributes,BindingResult result) {
         if(result.hasErrors()){
             return "redirect:/login?registered=false";
         }
+        redirectAttributes.addAttribute("messageType","success");
+        redirectAttributes.addAttribute("messageKey", "register.success");
         authService.register(request);
         return "redirect:/login?registered=true";
     }
