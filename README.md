@@ -2,7 +2,7 @@
 
 ## 📌 Proje Hakkında
 
-Bu proje, kullanıcıların etkinlik oluşturabildiği ve yönetebildiği bir REST API uygulamasıdır.
+Bu proje, kullanıcıların etkinlik oluşturabildiği ve yönetebildiği bir REST API ve Web-site uygulamasıdır.
 Spring Boot kullanılarak geliştirilmiş olup JWT tabanlı authentication ve role-based authorization içermektedir.
 
 ---
